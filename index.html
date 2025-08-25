@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sethupathy Government Arts College - Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>/* ADMISSIONS PAGE STYLES */
+
+/* Page Hero */
+.page-hero {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1.5" fill="white" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="white" opacity="0.1"/></svg>');
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.stat-item {
+  background: rgba(255,255,255,0.15);
+  padding: 30px 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  min-width: 180px;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-8px);
+}
+
+.stat-item i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #f1c40f;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 900;
+}
+
+.stat-item p {
+  margin: 10px 0 0 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Admission Process */
+.admission-process {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step-item {
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 8px 20px rgba(39,174,96,0.3);
+}
+
+.step-content h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.step-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Application Form Section */
+.application-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.form-header {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.form-header h2 {
+  margin: 0 0 15px 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form-header i {
+  margin-right: 15px;
+}
+
+.form-header p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Form Sections */
+.form-section {
+  padding: 40px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+}
+
+.form-section h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+}
+
+.form-section i {
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+/* Form Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e3f2fd;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+}
+
+.form-group input:invalid {
+  border-color: #e74c3c;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+  background: #3498db;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Submit Button */
+.form-submit {
+  padding: 40px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 20px rgba(39,174,96,0.3);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #229954, #27ae60);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(39,174,96,0.4);
+}
+
+.submit-btn i {
+  font-size: 1.1rem;
+}
+
+/* Important Dates */
+.important-dates {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.dates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.date-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  border-top: 4px solid #3498db;
+}
+
+.date-card:hover {
+  transform: translateY(-8px);
+}
+
+.date-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px auto;
+}
+
+.date-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.date-card h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.date-card .date {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.date-card .description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Eligibility & Documents */
+.eligibility-docs {
+  padding: 80px 0;
+  background: white;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.eligibility h2,
+.documents h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.eligibility i,
+.documents i {
+  color: #27ae60;
+  font-size: 1.5rem;
+}
+
+.eligibility-item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 4px solid #27ae60;
+}
+
+.eligibility-item h3 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.eligibility-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eligibility-item li {
+  padding: 5px 0;
+  color: #555;
+  position: relative;
+  padding-left: 20px;
+}
+
+.eligibility-item li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.documents-checklist {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px dashed #dee2e6;
+  color: #555;
+  font-weight: 500;
+}
+
+.document-item:last-child {
+  border-bottom: none;
+}
+
+.document-item i {
+  color: #27ae60;
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.admission-contact {
+  padding: 80px 0;
+  background: #2c3e50;
+  color: white;
+}
+
+.admission-contact .section-title {
+  color: white;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.admission-contact .contact-item {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.admission-contact .contact-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.admission-contact .contact-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.admission-contact h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.admission-contact p {
+  color: #bdc3c7;
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Success Message */
+.success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 10000;
+  max-width: 500px;
+  width: 90%;
+  display: none;
+}
+
+.success-message.show {
+  display: block;
+  animation: successFadeIn 0.5s ease;
+}
+
+.success-message i {
+  font-size: 4rem;
+  color: #27ae60;
+  margin-bottom: 20px;
+}
+
+.success-message h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.success-message p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.success-close {
+  background: #27ae60;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Animations */
+@keyframes successFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-section {
+    padding: 30px 20px;
+  }
+  
+  .form-header {
+    padding: 30px 20px;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .dates-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .form-section {
+    padding: 20px 15px;
+  }
+  
+  .form-header {
+    padding: 25px 20px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="top-bar">
+      <img class="logo" src="./assets/tn_logo.png" alt="TN LOGO"/>
+      <div class="uni-title">
+        <h1><a href="./index.html">SETHUPATHY GOVERNMENT ARTS COLLEGE</a></h1>
+        <span>Ramanathapuram - Tamil Nadu - India</span>
+      </div>
+      <img class="logo" src="./assets/logoclg.png" alt="SGAC LOGO"/>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="./about.html">About</a></li>
+        <li><a href="#">Administration</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="./admissions.html">Admissions</a></li>
+        <li><a href="#">Departments</a></li>
+        <li><a href="./Faculty.html">Faculty</a></li>
+        <li><a href="#">Students</a></li>
+        <li><a href="#">Examination</a></li>
+        <li><a href="#">IQAC</a></li>
+        <li><a href="#">Library</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO / CAROUSEL + SIDEBAR NOTIFICATION + VC MSG -->
+  <section class="hero-row">
+    <div class="carousel-main">
+      <img src="./assets/college.jpg" class="carousel-img" id="carousel-img"/>
+      <div class="carousel-controls">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <!-- <span class="dot"></span> -->
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="news-block">
+        <h3><i class="fas fa-bullhorn"></i> Notifications</h3>
+        <div class="marquee-outer">
+          <ul class="notification-list"></ul>
+        </div>
+      </div>
+      <div class="vc-card">
+        <img src="./assets/college1.jpg" class="vc-img"/>
+        <div class="vc-quote">
+          <i class="fas fa-quote-left"></i>
+          <p>Our vision is to provide quality higher education, foster research and empower youth for global excellence through accessible and affordable education.</p>
+          <span class="vc-name">Principal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS NAVIGATION + TABLE -->
+  <section class="tabs-section">
+    <div class="tabs-nav">
+      <button class="tab-btn active"><i class="fas fa-landmark"></i> Departments</button>
+      <button class="tab-btn"><i class="fas fa-graduation-cap"></i> Programs</button>
+      <button class="tab-btn"><i class="fas fa-microscope"></i> Research</button>
+      <button class="tab-btn"><i class="fas fa-link"></i> Centres</button>
+      <button class="tab-btn"><i class="fas fa-cogs"></i> Facilities</button>
+    </div>
+    <div class="tabs-content" id="tab-content"></div>
+  </section>
+
+  <!-- ANNOUNCEMENT AND QUICKLINK ROW -->
+  <section class="announcement-row">
+    <div>
+      <h4><i class="fas fa-bullhorn"></i> Announcements</h4>
+      <ul>
+        <li>UG & PG Admissions 2025-26 Open</li>
+        <li>Academic Calendar 2025 Released</li>
+        <li>Scholarship Applications Available</li>
+        <li>NAAC Reaccreditation Process</li>
+      </ul>
+    </div>
+    <div>
+      <h4><i class="fas fa-link"></i> Quick Links</h4>
+      <ul>
+        <li><a href="#" class="popup-link"><i class="fas fa-user-plus"></i> Apply Online</a></li>
+        <li><a href="#"><i class="fas fa-folder-open"></i> Results</a></li>
+        <li><a href="#"><i class="fas fa-certificate"></i> NAAC</a></li>
+        <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+        <li><a href="#"><i class="fas fa-graduation-cap"></i> Scholarships</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-row">
+    <h3><i class="fas fa-images"></i> Photo Gallery</h3>
+    <div class="gallery">
+      <img src="./assets/college2.jpg" alt="College Campus">
+      <img src="./assets/college3.jpg" alt="Academic Block">
+      <img src="./assets/college1.jpg" alt="Students Activities">
+      <img src="./assets/college2.jpg" alt="Sports Complex">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <div>
+        <h4>Important Links</h4>
+        <ul>
+          <li><a href="#">Admission</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Results</a></li>
+          <li><a href="#">Scholarships</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <address>
+          Sethupathy Government Arts College<br/>
+          Achunthan Vayal, Madurai Road<br/>
+          Ramanathapuram - 623 502<br/>
+          Tamil Nadu, India<br/>
+          <b>Phone:</b> +91-4567-293122<br/>
+          <b>Email:</b> sgacrmd@gmail.com
+        </address>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <img src="https://via.placeholder.com/200x100?text=Map" alt="Location Map" style="border-radius:6px;border:1px solid #123;">
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Sethupathy Government Arts College. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- POPUP MODAL -->
+  <div class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+      <h2>Apply Online</h2>
+      <p>Welcome to SGAC Online Admission Portal. Please fill out the application form to apply for UG/PG programs.</p>
+      <button class="close-modal">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
