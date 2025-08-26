@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admissions Test Form</title>
+</head>
+<body>
+  <h2>Admissions Test Form</h2>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="Form submission handler"></iframe>
+  <form id="admissionForm"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSfsxZYylaSxkW6Tip6Su0mBD2D0fRmUEPsca81yV7R5M-Gqvw/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="return submitForm(event)">
+    <p>
+      <label>Name*<br>
+        <input type="text" name="entry.2005620554" required>
+      </label>
+    </p>
+    <p>
+      <label>Email*<br>
+        <input type="email" name="entry.1045781291" required>
+      </label>
+    </p>
+    <p>
+      <label>Phone*<br>
+        <input type="tel" name="entry.1166974658" required>
+      </label>
+    </p>
+    <p>
+      <label>Date Of Birth*<br>
+        <input type="date" name="entry.1870886290" required>
+      </label>
+    </p>
+    <p>
+      <label>Gender*<br>
+        <select name="entry.1375626670" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label>Address*<br>
+        <input type="text" name="entry.1065046570" required>
+      </label>
+    </p>
+    <p>
+      <label>Course Applying for*<br>
+        <select name="entry.479499184" required>
+          <option value="">Select</option>
+          <option value="B.Com (general)">B.Com (general)</option>
+          <option value="B.Com (Computer Application)">B.Com (Computer Application)</option>
+          <option value="B.A Tamil">B.A Tamil</option>
+          <option value="B.A English">B.A English</option>
+          <option value="B.Sc Mathematics">B.Sc Mathematics</option>
+          <option value="B.Sc Zoology">B.Sc Zoology</option>
+          <option value="B.Sc Physics">B.Sc Physics</option>
+          <option value="B.Sc Computer Science">B.Sc Computer Science</option>
+          <option value="B.Sc Chemistry">B.Sc Chemistry</option>
+          <option value="B.Sc">B.Sc</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label>Year Of Passing*<br>
+        <select name="entry.347061347" required>
+          <option value="">Select</option>
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label>12th Mark*<br>
+        <input type="number" name="entry.1099822669" required min="35" max="100">
+      </label>
+    </p>
+    <p>
+      <label>10th Mark*<br>
+        <input type="number" name="entry.1416808419" required min="35" max="100">
+      </label>
+    </p>
+    <p>
+      <label>TC Number*<br>
+        <input type="text" name="entry.2136875474" required>
+      </label>
+    </p>
+    <p>
+      <label>Income Number*<br>
+        <input type="text" name="entry.1664324858" required>
+      </label>
+    </p>
+    <p>
+      <label>Community Number<br>
+        <input type="text" name="entry.1434001217">
+      </label>
+    </p>
+    <p>
+      <label>Parent Name*<br>
+        <input type="text" name="entry.1878976567" required>
+      </label>
+    </p>
+    <p>
+      <label>Parents Number*<br>
+        <input type="tel" name="entry.2140741521" required>
+      </label>
+    </p>
+    <p>
+      <label>Parent Relationship*<br>
+        <select name="entry.297892273" required>
+          <option value="">Select</option>
+          <option value="Father">Father</option>
+          <option value="Mother">Mother</option>
+          <option value="Guardian">Guardian</option>
+        </select>
+      </label>
+    </p>
+    <p>
+      <label>Other Details<br>
+        <textarea name="entry.1726883402"></textarea>
+      </label>
+    </p>
+    <button type="submit" id="submitBtn">Submit Application</button>
+  </form>
+
+  <div id="success" style="display:none; color:green; font-weight:bold;">Application submitted! Please check the Google Form responses sheet.</div>
+
+  <script>
+    let submissionInProgress = false;
+    function submitForm(event) {
+      if (submissionInProgress) return false;
+      submissionInProgress = true;
+      document.getElementById('submitBtn').textContent = 'Submitting...';
+      document.getElementById('submitBtn').disabled = true;
+      setTimeout(function() {
+        document.getElementById('success').style.display = 'block';
+        document.getElementById('admissionForm').reset();
+        document.getElementById('submitBtn').textContent = 'Submit Application';
+        document.getElementById('submitBtn').disabled = false;
+        submissionInProgress = false;
+      }, 2500);
+      return true; // allow real submit
+    }
+    document.getElementById('hidden_iframe').onload = function() {
+      if (submissionInProgress) {
+        document.getElementById('success').style.display = 'block';
+        document.getElementById('admissionForm').reset();
+        document.getElementById('submitBtn').textContent = 'Submit Application';
+        document.getElementById('submitBtn').disabled = false;
+        submissionInProgress = false;
+      }
+    };
+  </script>
+</body>
+</html>

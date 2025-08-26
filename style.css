@@ -43,10 +43,9 @@ header {
 }
 
 .uni-title span {
-  margin-left: 26%;
+  margin-left: 2px;
   font-size: 1.07em;
-  /* text-align: center;
-   */
+  text-align: center; 
    align-items: center;
    text-align: center;
   color: #ddeefe;
