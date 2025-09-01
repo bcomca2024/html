@@ -116,7 +116,7 @@ const tabsContentData = [
           </ul>
         </div>
         <div>
-          <h4><i class="fas fa-chart-line"></i> Faculty of Management</h4>
+          <h4><i class="fas fa-chart-line"></i> Faculty of Commerce</h4>
           <ul>
             <li>Department of Management Studies</li>
             <li>Department of Commerce</li>
@@ -334,3 +334,4 @@ scrollToTop.addEventListener('click', () => {
 // Console welcome message
 console.log('%c🎓 SETHUPATHY GOVERMENT ARTS COLLEGE ', 'color: #1567c3; font-size: 24px; font-weight: bold;');
 console.log('%cDeveloped with ❤️ for IT Wings 2024 ', 'color: #666; font-size: 14px;');
+
